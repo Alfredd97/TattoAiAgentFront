@@ -14,6 +14,7 @@ import {
   useMediaQuery,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import LanguageSwitcher from './LanguageSwitcher';
 import { Link as RouterLink } from 'react-router-dom';
 
 const navItems = [
@@ -88,6 +89,7 @@ const Navbar = () => {
                   {item.label}
                 </Button>
               ))}
+              <LanguageSwitcher />
             </Box>
           )}
         </Toolbar>

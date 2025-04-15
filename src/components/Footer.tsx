@@ -6,8 +6,9 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import EmailIcon from '@mui/icons-material/Email';
 import PhoneIcon from '@mui/icons-material/Phone';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import { useTranslation } from 'react-i18next';
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
     <Box
       component="footer"
@@ -97,7 +98,7 @@ const Footer = () => {
           align="center"
           sx={{ mt: 4 }}
         >
-          © {new Date().getFullYear()} Tattoo Studio. All rights reserved.
+          © {new Date().getFullYear()} Tattoo Studio.
         </Typography>
       </Container>
     </Box>

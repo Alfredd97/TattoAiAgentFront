@@ -1,8 +1,10 @@
 import React from 'react';
 import { Box, Container, Typography, Button, Stack } from '@mui/material';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const Home = () => {
+  const { t } = useTranslation();
   return (
     <Box>
       {/* Hero Section */}
@@ -19,7 +21,7 @@ const Home = () => {
         <Container maxWidth="lg">
           <Box sx={{ maxWidth: '600px' }}>
             <Typography variant="h1" sx={{ mb: 2 }}>
-              Your Body, Our Canvas
+              {t('home.title')}
             </Typography>
             <Typography variant="h5" sx={{ mb: 4, color: 'text.secondary' }}>
               Transform your ideas into stunning tattoo art with our expert artists
