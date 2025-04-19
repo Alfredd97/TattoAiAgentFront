@@ -21,7 +21,7 @@ const Home = () => {
         <Container maxWidth="lg">
           <Box sx={{ maxWidth: '600px' }}>
             <Typography variant="h1" sx={{ mb: 2 }}>
-              {t('home.title')}
+              {t('Welcome to our Website')}
             </Typography>
             <Typography variant="h5" sx={{ mb: 4, color: 'text.secondary' }}>
               Transform your ideas into stunning tattoo art with our expert artists

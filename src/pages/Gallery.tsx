@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box, Container, Typography, Grid, Card, CardMedia, CardContent } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 
 // Mock data - replace with actual data from your API
 const galleryItems = [
@@ -19,11 +20,12 @@ const galleryItems = [
 ];
 
 const Gallery = () => {
+  const { t } = useTranslation();
   return (
     <Box sx={{ py: 8 }}>
       <Container maxWidth="lg">
         <Typography variant="h2" sx={{ mb: 6, textAlign: 'center' }}>
-          Our Work
+          {t('Gallery.Our Work')}
         </Typography>
         <Grid container spacing={4}>
           {galleryItems.map((item) => (
