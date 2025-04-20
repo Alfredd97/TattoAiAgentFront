@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Container, Typography, Button, Stack } from '@mui/material';
 import { Link } from 'react-router-dom';
+import backgroundImage from '../assets/images/Minimalist.jpg'; // Import the image
 import { useTranslation } from 'react-i18next';
 
 const Home = () => {
@@ -13,7 +14,7 @@ const Home = () => {
           height: '100vh',
           display: 'flex',
           alignItems: 'center',
-          background: 'linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("/hero-bg.jpg")',
+          background: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(${backgroundImage})`, // Use the imported image
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}

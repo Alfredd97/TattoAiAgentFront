@@ -1,27 +1,29 @@
 import React from 'react';
 import { Box, Container, Typography, Grid, Card, CardMedia, CardContent } from '@mui/material';
 import { useTranslation } from 'react-i18next';
+import japaneseImage from '../assets/images/Japanese.jpg';
+import minimalistImage from '../assets/images/Minimalist.jpg';
 
 // Mock data - replace with actual data from your API
 const galleryItems = [
   {
     id: 1,
     title: 'Traditional Japanese',
-    image: '/src/assets/images/Japanese.jpg',
+    image: japaneseImage,
     description: 'Traditional Japanese dragon sleeve tattoo',
   },
   {
     id: 2,
     title: 'Minimalist',
-    image: '/src/assets/images/Minimalist.jpg',
+    image: minimalistImage,
     description: 'Minimalist geometric design',
   },
   // Add more items as needed
 ];
 
 const Gallery = () => {
-  const { t } = useTranslation();
-  return (
+    const { t } = useTranslation();
+    return (
     <Box sx={{ py: 8 }}>
       <Container maxWidth="lg">
         <Typography variant="h2" sx={{ mb: 6, textAlign: 'center' }}>

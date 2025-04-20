@@ -1,5 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import enFlag from '../assets/images/en.svg';
+import esFlag from '../assets/images/es.svg';
 
 
 const LanguageSwitcher: React.FC = () => {
@@ -17,7 +19,7 @@ const LanguageSwitcher: React.FC = () => {
             >
                 <div className="flag-container">
                     <img
-                        src="/src/assets/images/en.svg" // Replace with the actual path to your English flag icon
+                        src={enFlag}
                         alt="English"
                         className="flag-icon"
                     />
@@ -29,7 +31,7 @@ const LanguageSwitcher: React.FC = () => {
             >
                 <div className="flag-container">
                     <img
-                        src="/src/assets/images/es.svg" // Replace with the actual path to your Spanish flag icon
+                        src={esFlag}
                         alt="Español"
                         className="flag-icon"
                     />

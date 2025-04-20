@@ -13,7 +13,7 @@ export default defineConfig({
   
   build: {
     outDir: 'dist', // Explicit output directory
-    assetsDir: '.', // Put assets in root of dist (optional)
+    assetsDir: 'assets', // Put assets in root of dist (optional)
     emptyOutDir: true, // Clear dist folder on build
     sourcemap: true, // Enable sourcemaps for debugging
     manifest: true, // Generate build manifest
