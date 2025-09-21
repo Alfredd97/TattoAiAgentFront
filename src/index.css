@@ -20,4 +20,36 @@ a {
 img {
   max-width: 100%;
   height: auto;
+}
+
+.language-container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.flag-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flag-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.language-button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.language-button.selected {
+  border: 2px solid #007bff; /* Example: blue border */
+  border-radius: 5px; /* Example: slightly rounded corners */
 } 

@@ -10,6 +10,7 @@ import {
   Grid,
   Button,
 } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 
 const bodyLocations = [
   'Arm',
@@ -32,6 +33,8 @@ const styles = [
 ];
 
 const CostEstimator = () => {
+  const { t } = useTranslation();
+
   const [size, setSize] = useState<number>(5);
   const [location, setLocation] = useState<string>('');
   const [style, setStyle] = useState<string>('');
@@ -53,12 +56,12 @@ const CostEstimator = () => {
       <Container maxWidth="md">
         <Paper sx={{ p: 4 }}>
           <Typography variant="h2" sx={{ mb: 4, textAlign: 'center' }}>
-            Tattoo Cost Estimator
+            {t('Cost Estimator.Get a Cost Estimate')}
           </Typography>
           <Grid container spacing={4}>
             <Grid item xs={12}>
               <Typography gutterBottom>
-                Approximate Size (inches)
+                {t('Cost Estimator.Select the Size')}
               </Typography>
               <Slider
                 value={size}
@@ -77,7 +80,7 @@ const CostEstimator = () => {
               <TextField
                 select
                 fullWidth
-                label="Body Location"
+                label={t('Cost Estimator.Select the Material')}
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
               >
@@ -92,7 +95,7 @@ const CostEstimator = () => {
               <TextField
                 select
                 fullWidth
-                label="Style"
+                label={t('Cost Estimator.Select the Size')}
                 value={style}
                 onChange={(e) => setStyle(e.target.value)}
               >
@@ -112,7 +115,7 @@ const CostEstimator = () => {
                 onClick={calculateEstimate}
                 disabled={!location || !style}
               >
-                Calculate Estimate
+                {t('Cost Estimator.Calculate')}
               </Button>
             </Grid>
             {estimatedCost && (
@@ -120,7 +123,7 @@ const CostEstimator = () => {
                 <Paper sx={{ p: 3, mt: 2, textAlign: 'center', bgcolor: 'primary.main' }}>
                   <Typography variant="h4" sx={{ color: 'white' }}>
                     Estimated Cost: ${estimatedCost}
-                  </Typography>
+                    </Typography>
                   <Typography variant="body2" sx={{ color: 'white', mt: 1 }}>
                     *This is a rough estimate. Final price may vary based on design complexity and consultation.
                   </Typography>

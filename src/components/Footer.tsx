@@ -9,6 +9,7 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { useTranslation } from 'react-i18next';
 
 const Footer: React.FC = () => {
+  const { t } = useTranslation();
   return (
     <Box
       component="footer"
@@ -98,7 +99,7 @@ const Footer: React.FC = () => {
           align="center"
           sx={{ mt: 4 }}
         >
-          © {new Date().getFullYear()} Tattoo Studio.
+          © {new Date().getFullYear()} Tattoo Studio. {t('Footer')}
         </Typography>
       </Container>
     </Box>
