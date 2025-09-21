@@ -9,6 +9,10 @@ i18n
     resources: {
       en: {
         translation: {
+          "home": {
+            "title": "Welcome to Tattoo Studio",
+            "description": "Transform your ideas into stunning tattoo art with our expert artists",
+          },
           "welcome": "Welcome!",
           "about": "About Us",
           "appointment": "Appointment",
@@ -18,6 +22,10 @@ i18n
       },
       es: {
         translation: {
+          "home": {
+            "title": "Bienvenido a Tattoo Studio",
+            "description": "Transforma tus ideas en arte tatuaje con nuestros expertos artistas",
+          },
           "welcome": "¡Bienvenido!",
           "about": "Sobre Nosotros",
           "appointment": "Cita",

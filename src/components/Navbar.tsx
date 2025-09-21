@@ -9,20 +9,20 @@ import {
   List,
   ListItem,
   ListItemText,
+  ListItemButton,
   Box,
   useTheme,
   useMediaQuery,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import LanguageSwitcher from './LanguageSwitcher';
-import { Link as RouterLink } from 'react-router-dom';
 
 const navItems = [
-  { label: 'Home', path: '/' },
-  { label: 'Gallery', path: '/gallery' },
-  { label: 'Appointment', path: '/appointment' },
-  { label: 'Cost Estimator', path: '/estimate' },
-  { label: 'About', path: '/about' },
+  { label: 'Home', sectionId: 'home' },
+  { label: 'About', sectionId: 'about' },
+  { label: 'Gallery', sectionId: 'gallery' },
+  { label: 'Cost Estimator', sectionId: 'cost-estimator' },
+  { label: 'Appointment', sectionId: 'appointment' },
 ];
 
 const Navbar = () => {
@@ -34,16 +34,21 @@ const Navbar = () => {
     setMobileOpen(!mobileOpen);
   };
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setMobileOpen(false); // Close mobile drawer after navigation
+  };
+
   const drawer = (
     <List>
       {navItems.map((item) => (
-        <ListItem
-          component={RouterLink}
-          to={item.path}
-          key={item.label}
-          onClick={handleDrawerToggle}
-        >
-          <ListItemText primary={item.label} />
+        <ListItem key={item.label} disablePadding>
+          <ListItemButton onClick={() => scrollToSection(item.sectionId)}>
+            <ListItemText primary={item.label} />
+          </ListItemButton>
         </ListItem>
       ))}
     </List>
@@ -66,13 +71,13 @@ const Navbar = () => {
           )}
           <Typography
             variant="h6"
-            component={RouterLink}
-            to="/"
+            onClick={() => scrollToSection('home')}
             sx={{
               flexGrow: 1,
               color: 'primary.main',
               textDecoration: 'none',
               fontWeight: 700,
+              cursor: 'pointer',
             }}
           >
             Tattoo Studio
@@ -82,8 +87,7 @@ const Navbar = () => {
               {navItems.map((item) => (
                 <Button
                   key={item.label}
-                  component={RouterLink}
-                  to={item.path}
+                  onClick={() => scrollToSection(item.sectionId)}
                   color="primary"
                 >
                   {item.label}
